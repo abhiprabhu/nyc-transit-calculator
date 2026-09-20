@@ -44,7 +44,10 @@ function RouteLeg({ leg, index, stations }) {
         {leg.segments.map((segment, i) => (
           <li key={i}>
             {segment.mode === 'transfer' ? (
-              <span>↳ Transfer to {resolveStationName(segment.toStationId, stations)}</span>
+              <span>
+                ↳ Transfer to {resolveStationName(segment.toStationId, stations)}{' '}
+                <span className="text-emerald-600">(no fee, within 2 hrs)</span>
+              </span>
             ) : (
               <span>
                 {segment.line ? `${segment.line} train` : 'Ride'}
