@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test src/**/*.test.js",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:migrate": "psql \"$DATABASE_URL\" -f src/db/schema.sql",
+    "ingest": "node src/scripts/ingestGtfs.js",
+    "test:graph": "node src/scripts/testGraph.js",
+    "test:path-feed": "node scripts/testPathFeed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "adm-zip": "^0.6.1",
+    "cors": "^2.8.6",
+    "csv-parse": "^7.0.2",
+    "dotenv": "^18.0.1",
+    "express": "^5.2.1",
+    "gtfs-realtime-bindings": "^2.2.0",
+    "pg": "^8.23.0"
+  }
+}
